@@ -35,4 +35,5 @@ RUN python -c "from rembg import remove; from PIL import Image; import io; remov
 EXPOSE 5000
 
 # Start the Flask app using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app", "--workers=2", "--threads=2"]
+CMD gunicorn --bind 0.0.0.0:$PORT app:app --workers=2 --threads=2
+
